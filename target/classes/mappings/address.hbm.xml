@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.epam.testapp.bean.Address" table="ADDRESS">
+		<id name="id" type="int">
+			<column name="ID" />
+			<generator class="sequence">
+				<param name="sequence">ADDRESSES_SEQ</param>
+			</generator>
+		</id>
+		<property name="name" column="NAME" />
+		<many-to-one name="city" class="com.epam.testapp.bean.City"
+			fetch="join" lazy="false">
+			<column name="CITY_ID" not-null="true" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

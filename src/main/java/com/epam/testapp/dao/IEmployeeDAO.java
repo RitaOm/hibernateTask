@@ -8,5 +8,5 @@ import com.epam.testapp.bean.Employee;
 public interface IEmployeeDAO {
 	
 	public List<Employee> getEmployeeList(int firstResult, int resultsPerPage) throws SQLException;
-	public int getRowsNumber() throws SQLException;
+	
 }
